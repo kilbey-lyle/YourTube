@@ -1,5 +1,5 @@
 # YourTube
-YourTube is the home of YouTube channel reviews. With over 100 hours uploaded to YouTube a minute, we all know how difficult it can be to know who to watch next. That's where YourTube comes in; being home to a community's opinions, thoughts, and comments on everyones favourite channels, there's no way you'll be stuck on what to watch next again. It was created and developed by Lyle Kilbey as part of Code Institute's Web App Development Qualification.
+YourTube is the home of YouTube channel reviews. With over 100 hours of content uploaded to YouTube a minute, we all know how difficult it can be to know who to watch next. That's where YourTube comes in; being home to a community's opinions, thoughts, and comments on everyones favourite channels, there's no way you'll be stuck on what to watch next again. It was created and developed by Lyle Kilbey as part of Code Institute's Web App Development Qualification.
 
 **Insert Responsive UI Mock-Up here**
 
@@ -10,5 +10,48 @@ YourTube aims to provide the YouTube community with a place to share reviews on 
  - Get recommendations on what channels other youtube consumers enjoy
  - Share your recommendations for youtube channels
 ## Site owner goal
-- Increase site traffic with the goal to sell advertisement space
+- Increase site traffic to sell advertisement space
 ## User Stories
+This section will outline the user scenarios, which will be addressed within the feature set of YourTube. 
+- As a user, I would like to create reviews
+- As a user, I would like to be able to delete my reviews
+- As a user, I would like to be able to edit my reviews
+- As a user, I would like to be able to sign in
+- As a user, I would like it so only I can edit my reviews
+- As a user, I would like to be able to see other people's reviews
+- As a user, I would like to be able to sign out
+- As a user, I would like to be able to see only the reviews I have created
+- As a user, I would like to be able to see reviews without having to sign in
+- As a user, I would like a quick way of accessing a reviewed channel
+# Design and Wireframes
+## Colours
+The color scheme for YourTube will be as follows:
+![YourTube Colour Theme](assets/readme_imgs/yourtube_color_theme.jpeg)
+This scheme has been chosen to add a feeling of familiarity with our target audience of YouTube users. It reflects the signature YouTube red and the neutral supporting colours used within YouTube. The addition of the green Colour within YourTube allows for design choices that highlight users' action buttons. 
+### Background Text Contrast
+The table below shows all of the eligible colours, from within the colour scheme, that can be used when another colour has been set to the background. This has been verfied using [Webaim](https://webaim.org/resources/contrastchecker/).
+|Background Colour|Eligible Text Colours|
+|-|-|
+|**Black** #0F0F0F|White, Grey, Green|
+|**Red** #E1002D|White|
+|**White** #FFFFFF|Red, Black|
+|**Grey** #BABABA|Black|
+|**Green** #00BD4B|Black|
+## Screens
+YourTube consists of 4 main screens. This section will detail what these screen contain.
+### Feed
+This is the public feed for all users of YourTube, signed in or not. It contains a list of all Reviews that have been marked for the public by their creators. If a a user is signed in, for reviews they have created, they should be able to navigate to the edit review screen. 
+### Your Reviews
+This is where a user can see reviews thay have created. They should not see reviews that have been created by other users here. It also contains the option to go to the create review and edit review screens.
+### Edit Review
+This screen allows the user to change details of a pre-existing review; when loaded, it should be preloaded with the data for the review, which was used to action the loading of this screen. Any changes made can be saved or discarded using the Update or Cancel button respectively. 
+### Create Review
+This screen allows users to create a new review, it should have any preloaded information. A user should be able to leave this screen with or without svaing a review. 
+## Wireframes
+### Mobile Devices
+![YourTube mobile devices wireframe](assets/readme_imgs/mobile_yourtube_wireframes.png)
+### Tablet Devices
+![YourTube tablet devices wireframe](assets/readme_imgs/tablet_yourtube_wireframes.png)
+### Desktop Devices
+![yourTube desktop devices wireframe](assets/readme_imgs/desktop_yourtube_wireframes.png)
+
