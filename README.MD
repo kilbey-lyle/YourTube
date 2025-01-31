@@ -54,4 +54,27 @@ This screen allows users to create a new review, it should have any preloaded in
 ![YourTube tablet devices wireframe](assets/readme_imgs/tablet_yourtube_wireframes.png)
 ### Desktop Devices
 ![yourTube desktop devices wireframe](assets/readme_imgs/desktop_yourtube_wireframes.png)
-
+## Navigation Elements
+The navigation elements present to a user will change depending on whether they are signed in. The below lists explain what navigation elements will be present based on the current user's sign in status. 
+### User not signed in
+- Feed
+- Sign in
+### User  signed in
+- Feed
+- Your Reviews
+- Sign Out
+# User Story Implementation Evidence
+**Fill this out later**
+# Technologies Used
+- HTML - To create a basic site
+- CSS - To create a nice, standout front-end and to give a great user experience
+- Materialize - Frontend framework  
+- Jquery - Required for Materialize framework
+- Canva - To create a wireframes
+- Python - For backend functionality
+- MongoDB - For database functionality
+# Testing
+Manual Testing and Validator Testing will be used to help ensure quality of YourTube. More information can be found here [testing.md](testing.md)
+# Deployment
+**Fill this out later**
+# Credits
