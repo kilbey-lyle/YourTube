@@ -1,18 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YourTube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://kit.fontawesome.com/289e1d11d0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 </head>
+
 <body>
-    
+    <!--Start of header-->
+    <header>
+        <nav>
+            <!--Main nav bar buttons-->
+            <div class="nav-wrapper bg-white">
+                <a href="#!" class="brand-logo black-text"><span class="youtube white-text">Your</span>Tube</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger tx-black"><i
+                        class="fa-solid fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a class="tx-black nav-bttn" href="#.html">Feed</a></li>
+                    <li><a class="tx-black nav-bttn" href="#.html">Your Reviews</a></li>
+                    <li><a id="signin" class="tx-black nav-bttn" href="#.html">Sign In</a></li>
+                    <li><a id="signout" class="tx-black nav-bttn" href="#.html">Sign Out</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--Side nave bar buttons-->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a class="tx-black bg-grey nav-bttn" href="#.html">Feed</a></li>
+            <li><a class="tx-black bg-grey nav-bttn" href="#.html">Your Reviews</a></li>
+            <li><a class="tx-black bg-green nav-bttn signin" href="#.html">Sign In</a></li>
+            <li><a class="tx-black bg-red nav-bttn signout" href="#.html">Sign Out</a></li>
+        </ul>
+    </header>
+    <!--Page Title-->
+    <div class="container">
+        <div class="col center-align offset-m2 m8 s12">
+            <div class="underline-wrapper">
+                <h2 class="screen-title tx-black">FEED</h1>
+            </div>
+        </div>
+    </div>
+    <!--Start of Panel-->
+    <section>
+        <div class="row">
+            <div class="col offset-m2 m8 s12">
+                <div class="card bg-white z-depth-0">
+                    <div class="card-content">
+                        <ul class="collapsible popout">
+                            <li>
+                                <div class="collapsible-header bg-red tx-white">
+                                    <i class="fa-solid fa-play"></i>
+                                    <p>timthetateman</p>
+                                    <a class="center-align"><i class="fa-solid fa-pen-to-square edit-bttn"></i></a>
+                                </div>
+                                <div class="collapsible-body bg-grey">
+                                    <p class="review-header">Date Created:</p><span class="review-data"></span>
+                                    <p class="review-header">Created By:</p><span class="review-data"></span>
+                                    <p class="review-header">Rating:</p><span class="review-data"></span>
+                                    <p class="review-header">Genre:</p><span class="review-data"></span>
+                                    <span class="review-data">This is a placeholder description</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header bg-red tx-white">
+                                    <i class="fa-solid fa-play"></i>
+                                    <p>CGB</p>
+                                    <a class="center-align"><i class="fa-solid fa-pen-to-square edit-bttn"></i></a>
+                                </div>
+                                <div class="collapsible-body bg-grey">
+                                    <p class="review-header">Date Created:</p><span class="review-data"></span>
+                                    <p class="review-header">Created By:</p><span class="review-data"></span>
+                                    <p class="review-header">Rating:</p><span class="review-data"></span>
+                                    <p class="review-header">Genre:</p><span class="review-data"></span>
+                                    <span class="review-data">This is a placeholder description</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div class="bg-grey tx-black valign-wrapper footer">
+            <a href="#!" class="brand-logo black-text"><i class="fa-regular fa-copyright"></i><span
+                    class="youtube white-text">Your</span>Tube</a>
+        </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+
 </html>

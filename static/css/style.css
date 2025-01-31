@@ -1,0 +1,159 @@
+body {
+    font-family: "Roboto", serif;
+}
+
+/*--------- Colors*/
+/* background*/
+
+.bg-red {
+    background-color: #E1002D;
+}
+
+.bg-black {
+    background-color: #0f0f0f;
+}
+
+.bg-white {
+    background-color: #FFFFFF;
+}
+
+.bg-grey {
+    background-color: #BABABA;
+}
+
+.bg-green {
+    background-color: #00bd4b;
+}
+
+/* text*/
+
+.tx-red {
+    color: #E1002D;
+}
+
+.tx-black {
+    color: #0f0f0f;
+}
+
+.tx-white {
+    color: #FFFFFF;
+}
+
+.tx-grey {
+    color: #BABABA;
+}
+
+.tx-green {
+    color: #00bd4b;
+}
+
+/*--------- Header*/
+/* Logo*/
+
+.youtube{
+    color:white;
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    background-color: #e21;
+    padding: 0 15px;
+    border-radius: 50% / 11%;
+    margin: 5px 0px 0px 5px;
+}
+.youtube::before{
+    position: absolute;
+    background: inherit;
+    top: 10%;
+    bottom: 10%;
+    right: -5%;
+    left: -4.5%;
+    border-radius: 5% / 50%;
+}
+
+.brand-logo {
+    margin-left: 15px;
+}
+/* Nav Bar*/
+
+.nav-bttn {
+    font-size: large;
+    border-radius: 10px;
+    height: 40px;
+    margin: 10px 5px 5px 5px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #BABABA;
+}
+
+#signin {
+    border: 2px solid #00bd4b;
+}
+
+#signout {
+    border: 2px solid #E1002D;
+}
+/*--------- Screen Title*/
+.underline-wrapper {
+    border-bottom: 2px solid #E1002D;
+}
+
+/*--------- Reviews*/
+/* review feed*/
+
+.collapsible-header:hoover {
+    background-color: rgb(255, 0, 45, 0.5);
+}
+
+.collapsible-header p {
+    margin-right: 30px;
+    font-weight: 550;
+    font-size: 20px;
+}
+
+.collapsible-header a {
+    background-color: #00bd4b;
+    color: #FFFFFF;
+    width:28px;
+    height: 30px;
+    border-radius: 5px;
+    position: absolute;
+    right: 60px;
+    
+}
+
+.edit-bttn{
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+
+.collapsible-body {
+    padding: 15px;
+}
+
+.review-header {
+    font-weight: 550;
+}
+
+/*--------- Footer*/
+.footer {
+    height: 50px;
+    padding: 35px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a{
+    font-size: 33px;
+    margin: 0 auto;
+}
+
+.footer i {
+    font-size: 10px;
+    vertical-align: top;
+}
