@@ -28,8 +28,24 @@ def your_reviews():
     reviews = mongo.db.reviews.find()
     return render_template("your_reviews.html", reviews=reviews)
 
-@app.route("/signin")
+@app.route("/signin", methods=["GET", "POST"])
 def signin():
+    if request.method == "POST":
+        user = user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if user:
+            if check_password_hash(user["password"], request.form.get("password")):
+                print("successful login")
+                session['user'] = request.form.get("username").lower()
+                return redirect(url_for('feed'))
+            else:
+                print("failed login")
+                return redirect(url_for('signin'))
+        else:
+            print("failed login")
+            return redirect(url_for('signin'))
+
     return render_template("signin.html")
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -51,6 +67,10 @@ def signup():
         session['user'] = request.form.get("username").lower()
     return render_template("signup.html")
 
+@app.route("/signout")
+def signout():
+    session.clear()
+    return redirect(url_for('feed'))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
