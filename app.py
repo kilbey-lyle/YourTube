@@ -16,11 +16,22 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
-def hello():
-    # reviews = mongo.db.reviews.find()
-    reviews = [{"name":"lyle","time":"111"}]
-    return render_template("base.html")
+@app.route("/feed")
+def feed():
+    reviews = mongo.db.reviews.find()
+    return render_template("feed.html", reviews=reviews)
+
+@app.route("/your_reviews")
+def your_reviews():
+    reviews = mongo.db.reviews.find()
+    return render_template("your_reviews.html", reviews=reviews)
+
+@app.route("/signin")
+def signin():
+    return render_template("signin.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

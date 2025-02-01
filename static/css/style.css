@@ -106,13 +106,18 @@ body {
     background-color: rgb(255, 0, 45, 0.5);
 }
 
-.collapsible-header p {
+.channel-name {
+    color: #FFFFFF;
     margin-right: 30px;
     font-weight: 550;
     font-size: 20px;
 }
 
-.collapsible-header a {
+.link-hover:hover {
+    text-decoration: underline;
+}
+
+.edit-bttn {
     background-color: #00bd4b;
     color: #FFFFFF;
     width:28px;
@@ -120,22 +125,12 @@ body {
     border-radius: 5px;
     position: absolute;
     right: 60px;
-    
-}
-
-.edit-bttn{
     padding-top: 3px;
-    padding-right: 3px;
-    padding-left: 3px;
 }
 
 
 .collapsible-body {
     padding: 15px;
-}
-
-.review-header {
-    font-weight: 550;
 }
 
 /*--------- Footer*/

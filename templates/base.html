@@ -25,70 +25,21 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger tx-black"><i
                         class="fa-solid fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a class="tx-black nav-bttn" href="#.html">Feed</a></li>
-                    <li><a class="tx-black nav-bttn" href="#.html">Your Reviews</a></li>
-                    <li><a id="signin" class="tx-black nav-bttn" href="#.html">Sign In</a></li>
+                    <li><a class="tx-black nav-bttn" href="{{ url_for('feed') }}">Feed</a></li>
+                    <li><a class="tx-black nav-bttn" href="{{ url_for('your_reviews') }}">Your Reviews</a></li>
+                    <li><a id="signin" class="tx-black nav-bttn" href="{{ url_for('signin') }}">Sign In</a></li>
                     <li><a id="signout" class="tx-black nav-bttn" href="#.html">Sign Out</a></li>
                 </ul>
             </div>
         </nav>
         <!--Side nave bar buttons-->
         <ul class="sidenav" id="mobile-demo">
-            <li><a class="tx-black bg-grey nav-bttn" href="#.html">Feed</a></li>
-            <li><a class="tx-black bg-grey nav-bttn" href="#.html">Your Reviews</a></li>
-            <li><a class="tx-black bg-green nav-bttn signin" href="#.html">Sign In</a></li>
+            <li><a class="tx-black bg-grey nav-bttn" href="{{ url_for('feed') }}">Feed</a></li>
+            <li><a class="tx-black bg-grey nav-bttn" href="{{ url_for('your_reviews') }}">Your Reviews</a></li>
+            <li><a class="tx-black bg-green nav-bttn signin" href="{{ url_for('signin') }}">Sign In</a></li>
             <li><a class="tx-black bg-red nav-bttn signout" href="#.html">Sign Out</a></li>
         </ul>
     </header>
-    <!--Page Title-->
-    <div class="container">
-        <div class="col center-align offset-m2 m8 s12">
-            <div class="underline-wrapper">
-                <h2 class="screen-title tx-black">FEED</h1>
-            </div>
-        </div>
-    </div>
-    <!--Start of Panel-->
-    <section>
-        <div class="row">
-            <div class="col offset-m2 m8 s12">
-                <div class="card bg-white z-depth-0">
-                    <div class="card-content">
-                        <ul class="collapsible popout">
-                            <li>
-                                <div class="collapsible-header bg-red tx-white">
-                                    <i class="fa-solid fa-play"></i>
-                                    <p>timthetateman</p>
-                                    <a class="center-align"><i class="fa-solid fa-pen-to-square edit-bttn"></i></a>
-                                </div>
-                                <div class="collapsible-body bg-grey">
-                                    <p class="review-header">Date Created:</p><span class="review-data"></span>
-                                    <p class="review-header">Created By:</p><span class="review-data"></span>
-                                    <p class="review-header">Rating:</p><span class="review-data"></span>
-                                    <p class="review-header">Genre:</p><span class="review-data"></span>
-                                    <span class="review-data">This is a placeholder description</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header bg-red tx-white">
-                                    <i class="fa-solid fa-play"></i>
-                                    <p>CGB</p>
-                                    <a class="center-align"><i class="fa-solid fa-pen-to-square edit-bttn"></i></a>
-                                </div>
-                                <div class="collapsible-body bg-grey">
-                                    <p class="review-header">Date Created:</p><span class="review-data"></span>
-                                    <p class="review-header">Created By:</p><span class="review-data"></span>
-                                    <p class="review-header">Rating:</p><span class="review-data"></span>
-                                    <p class="review-header">Genre:</p><span class="review-data"></span>
-                                    <span class="review-data">This is a placeholder description</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     {% block content %}
     {% endblock %}
     <footer>
