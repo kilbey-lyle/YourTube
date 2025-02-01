@@ -3,7 +3,7 @@
 <div class="container">
     <div class="col center-align offset-m2 m8 s12">
         <div class="underline-wrapper">
-            <h2 class="screen-title tx-black">Welcome Back!</h1>
+            <h2 class="screen-title tx-black">Sign Up!</h1>
         </div>
     </div>
 </div>
@@ -11,13 +11,13 @@
     <div class="row">
         <div class="col offset-m2 m8 s12">
             <div class="card bg-white z-depth-0">
-                <form class="card-content">
+                <form class="card-content" method="POST">
                     <div class="row">
                         <div class="col s1 form-icon">
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <div class="input-field col s11">
-                            <input id="username" name="username" type="text" class="validate" maxlength="15" minlength="3" pattern="^[a-zA-Z0-9]{3-15}$">
+                            <input id="username" name="username" type="text" class="validate">
                             <label for="username">Username</label>
                         </div>
                     </div>
@@ -26,19 +26,16 @@
                             <i class="fa-solid fa-lock"></i>
                         </div>
                         <div class="input-field col s11">
-                            <input id="password" name="password" type="password" class="validate">
+                            <input id="password" name="password" type="text" class="validate">
                             <label for="password">Pasword</label>
                         </div>
                     </div>
                     <div class="row">
-                        <button type="submit" class="col s12 btn-large bg-green">Sign In</button>
+                        <button type="submit" class="col s12 btn-large bg-green">Sign up</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</section>
-<section class="center-align">
-    <p><strong>New to YourTube? </strong>Sign up <a class="link-hover" href="{{ url_for('signup')}}">here</a>.</p>
 </section>
 {% endblock %}
