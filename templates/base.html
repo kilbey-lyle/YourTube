@@ -38,9 +38,12 @@
         <!--Side nave bar buttons-->
         <ul class="sidenav" id="mobile-demo">
             <li><a class="tx-black bg-grey nav-bttn" href="{{ url_for('feed') }}">Feed</a></li>
+            {% if session.user %}
             <li><a class="tx-black bg-grey nav-bttn" href="{{ url_for('your_reviews') }}">Your Reviews</a></li>
             <li><a class="tx-black bg-green nav-bttn signin" href="{{ url_for('signin') }}">Sign In</a></li>
+            {% else %}
             <li><a class="tx-black bg-red nav-bttn signout" href="{{ url_for('signout') }}l">Sign Out</a></li>
+            {% endif %}
         </ul>
     </header>
     {% block content %}

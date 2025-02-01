@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 if os.path.exists("env.py"):
     import env
 
@@ -20,12 +21,12 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/feed")
 def feed():
-    reviews = mongo.db.reviews.find()
+    reviews = mongo.db.reviews.find({"is_public":"on"})
     return render_template("feed.html", reviews=reviews)
 
 @app.route("/your_reviews")
 def your_reviews():
-    reviews = mongo.db.reviews.find()
+    reviews = mongo.db.reviews.find({"created_by": session['user']})
     return render_template("your_reviews.html", reviews=reviews)
 
 @app.route("/signin", methods=["GET", "POST"])
@@ -51,7 +52,6 @@ def signin():
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
-        print("this is a post")
         #check if user is already registered
         user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -71,6 +71,25 @@ def signup():
 def signout():
     session.clear()
     return redirect(url_for('feed'))
+
+@app.route("/create_review", methods=["GET", "POST"])
+def create_review():
+    if request.method == "POST":
+        new_review = {
+            "channel_name": request.form.get("channel_name"),
+            "channel_link": request.form.get("channel_link"),
+            "rating": request.form.get("rating"),
+            "genre": request.form.get("genre"),
+            "description": request.form.get("description"),
+            "is_public": request.form.get("is_public"),
+            "created_by": session['user'],
+            "date_created": datetime.today().strftime('%d/%m/%y')
+        }
+
+        mongo.db.reviews.insert_one(new_review)
+
+        return redirect(url_for('your_reviews'))
+    return render_template("create_review.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="col center-align offset-m2 m8 s12">
+        <div class="underline-wrapper">
+            <h2 class="screen-title tx-black">Create a review</h1>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="row">
+        <div class="col offset-m2 m8 s12">
+            <div class="card bg-white z-depth-0">
+                <form class="card-content" method="POST">
+                    <div class="row">
+                        <div class="col s1 form-icon">
+                            <i class="fa-solid fa-signature"></i>
+                        </div>
+                        <div class="input-field col s11">
+                            <input id="channel_name" name="channel_name" type="text" class="validate">
+                            <label for="channel_name">Channel Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s1 form-icon">
+                            <i class="fa-solid fa-link"></i>
+                        </div>
+                        <div class="input-field col s11">
+                            <input id="channel_link" name="channel_link" type="text" class="validate">
+                            <label for="channel_link">Channel Link</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s1 form-icon">
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div class="input-field col s5">
+                            <input id="rating" name="rating" type="text" class="validate" maxlength="1" pattern="^[0-5]$">
+                            <label for="rating">Rating out of 5</label>
+                        </div>
+                        <div class="col s1 form-icon">
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                        <div class="input-field col s5">
+                            <input id="genre" name="genre" type="text" class="validate">
+                            <label for="genre">Genre</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s1 form-icon">
+                            <i class="fa-solid fa-comment"></i>
+                        </div>
+                        <div class="input-field col s11">
+                            <textarea id="description" name="description"  class="validate materialize-textarea"></textarea>
+                            <label for="description">Description</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 form-icon center-align">
+                            <div class="switch">
+                                <label for="is_public">
+                                    Make public?
+                                  <input type="checkbox" name="is_public" id="is_public">
+                                  <span class="lever"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row valign-wrapper">
+                        <button type="submit" class="col s6 btn-large bg-green review-bttn">Create review</button>
+                        <a href="{{ url_for('your_reviews')}}" class="col s6 btn-large bg-red review-bttn">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

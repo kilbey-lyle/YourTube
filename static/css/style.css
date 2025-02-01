@@ -133,6 +133,18 @@ body {
     padding: 15px;
 }
 
+/* your reviews*/
+
+.create-bttn-wrapper {
+    margin-top: 25px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.create-bttn-wrapper a {
+    width: 90%;
+}
+
 /*--------- Forms*/
 /* signin*/
 
@@ -142,8 +154,29 @@ body {
     color: #E1002D;
 }
 
-form button {
-    margin-top: 50px;
+form button, form a {
+    margin: 50px 10px 0 10px;
+    width: 90%;
+}
+
+form .switch label {
+    color:#E1002D;
+    font-size: 15px;
+    position: fixed;
+    top: 625px;
+    right: 5%;
+}
+
+form .switch {
+    height:15px;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #E1002D;
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: rgb(255, 0, 45, 0.5);
 }
 
 
