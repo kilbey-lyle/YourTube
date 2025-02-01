@@ -22,6 +22,8 @@ mongo = PyMongo(app)
 @app.route("/feed")
 def feed():
     reviews = mongo.db.reviews.find({"is_public":"on"})
+    # for i in reviews:
+    #     print(i)
     return render_template("feed.html", reviews=reviews)
 
 @app.route("/your_reviews")
@@ -75,13 +77,14 @@ def signout():
 @app.route("/create_review", methods=["GET", "POST"])
 def create_review():
     if request.method == "POST":
+        is_public = "on" if request.form.get("is_public") else "off"
         new_review = {
             "channel_name": request.form.get("channel_name"),
             "channel_link": request.form.get("channel_link"),
             "rating": request.form.get("rating"),
             "genre": request.form.get("genre"),
             "description": request.form.get("description"),
-            "is_public": request.form.get("is_public"),
+            "is_public": is_public,
             "created_by": session['user'],
             "date_created": datetime.today().strftime('%d/%m/%y')
         }
@@ -89,7 +92,34 @@ def create_review():
         mongo.db.reviews.insert_one(new_review)
 
         return redirect(url_for('your_reviews'))
+
     return render_template("create_review.html")
+
+@app.route('/edit_review/<review_id>', methods=["GET", "POST"])
+def edit_review(review_id):
+    if request.method == "POST":
+        is_public = "on" if request.form.get("is_public") else "off"
+        updated_review = {
+            "channel_name": request.form.get("channel_name"),
+            "channel_link": request.form.get("channel_link"),
+            "rating": request.form.get("rating"),
+            "genre": request.form.get("genre"),
+            "description": request.form.get("description"),
+            "is_public": is_public,
+        }
+        
+
+        mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, {"$set":updated_review})
+
+        return redirect(url_for('your_reviews'))
+
+    review = mongo.db.reviews.find_one({"_id":ObjectId(review_id)})
+    return render_template('edit_review.html', review=review)
+
+@app.route('/delete_review/<review_id>')
+def delete_review(review_id):
+    mongo.db.reviews.delete_one({"_id": ObjectId(review_id)})
+    return redirect(url_for('feed'))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

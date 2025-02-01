@@ -166,9 +166,6 @@ form button, form a {
 form .switch label {
     color:#E1002D;
     font-size: 15px;
-    position: fixed;
-    top: 625px;
-    right: 5%;
 }
 
 form .switch {
@@ -181,6 +178,27 @@ form .switch {
 
 .switch label input[type=checkbox]:checked+.lever {
     background-color: rgb(255, 0, 45, 0.5);
+}
+
+.delete-bttn, .delete-bttn:focus {
+    color: #FFFFFF;
+    width:28px;
+    height: 30px;
+    border-radius: 5px;
+    padding-top: 3px;
+    background-color: #E1002D;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    margin: 10px;
+}
+
+/*--------- Modal*/
+/* delete modal*/
+
+.modal-icon {
+    font-size: 85px;
 }
 
 

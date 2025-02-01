@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col center-align offset-m2 m8 s12">
+            <div class="underline-wrapper">
+                <h2 class="screen-title tx-black">Edit a review</h1>
+            </div>
+        </div>
+        <div class="valign-wrapper">
+            <div class="col s2 center-align">
+                <button class="center-align delete-bttn modal-trigger" data-target="delete_modal"><i
+                        class="fa-solid fa-trash"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="row">
+        <div class="col offset-m2 m8 s12">
+            <div class="card bg-white z-depth-0">
+                <form class="card-content" method="POST">
+                    <div class="row">
+                        <div class="col s1 form-icon">
+                            <i class="fa-solid fa-signature"></i>
+                        </div>
+                        <div class="input-field col s11">
+                            <input id="channel_name" name="channel_name" type="text" class="validate"
+                                value="{{ review.channel_name }}">
+                            <label for="channel_name">Channel Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s1 form-icon">
+                            <i class="fa-solid fa-link"></i>
+                        </div>
+                        <div class="input-field col s11">
+                            <input id="channel_link" name="channel_link" type="text" class="validate"
+                                value="{{ review.channel_link }}">
+                            <label for="channel_link">Channel Link</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s1 form-icon">
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div class="input-field col s5">
+                            <input id="rating" name="rating" type="text" class="validate" maxlength="1"
+                                pattern="^[0-5]$" value="{{ review.rating }}">
+                            <label for="rating">Rating out of 5</label>
+                        </div>
+                        <div class="col s1 form-icon">
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                        <div class="input-field col s5">
+                            <input id="genre" name="genre" type="text" class="validate" value="{{ review.genre }}">
+                            <label for="genre">Genre</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s1 form-icon">
+                            <i class="fa-solid fa-comment"></i>
+                        </div>
+                        <div class="input-field col s11">
+                            <textarea id="description" name="description" class="validate materialize-textarea">
+                                {{- review.description -}}
+                            </textarea>
+                            <label for="description">Description</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 center-align">
+                            <div class="switch">
+                                <label for="is_public">
+                                    Make public?
+                                    {% if review.is_public == "off" %}
+                                    <input type="checkbox" name="is_public" id="is_public">
+                                    {% else %}
+                                    <input type="checkbox" name="is_public" id="is_public" checked>
+                                    {% endif %}
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row valign-wrapper">
+                        <button type="submit" class="col s6 btn-large bg-green review-bttn">Update review</button>
+                        <a href="{{ url_for('your_reviews')}}" class="col s6 btn-large bg-red review-bttn">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="delete_modal" class="modal">
+        <div class="row">
+            <div class="modal-header bg-red tx-white col s12 center-align">
+                <h4 class="modal-header">Are you sure?</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="modal-content col s12 center-align">
+                <i class="fa-solid fa-ban modal-icon"></i>
+                <p class="modal-content">This action can not be undone.</p>
+            </div>
+        </div>
+    <div class="modal-options center-align">
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    <a href="{{ url_for('delete_review', review_id=review._id) }}" class="modal-close btn-large bg-red">Delete Review</a>
+                </div>
+                <div class="col s6">
+                    <a href="#" class="modal-close btn-large bg-green">Go back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
