@@ -88,11 +88,15 @@ body {
 }
 
 #signin {
-    border: 2px solid #00bd4b;
+    background-color: #00bd4b;
+    color: #FFFFFF;
+    border: none;
 }
 
 #signout {
-    border: 2px solid #E1002D;
+    background-color: #E1002D;
+    color: #FFFFFF;
+    border: none;
 }
 /*--------- Screen Title*/
 .underline-wrapper {
