@@ -76,6 +76,12 @@ The navigation elements present to a user will change depending on whether they 
 # Testing
 Manual Testing and Validator Testing will be used to help ensure quality of YourTube. More information can be found here [testing.md](testing.md)
 # Deployment
-**Fill this out later**
+1. Created requirements file
+2. Created Procfile
+3. Created app in Heroku UI
+4. Connected Github repo to Heroku
+5. Added config vars in Heroku UI
+6. 
+
 # Credits
 https://dev.to/rembertdesigns/youtube-logo-pure-css-2268 - LOGO
