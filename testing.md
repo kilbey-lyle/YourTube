@@ -68,4 +68,8 @@ After fixing the incorrect closing tag for the 'Welcome back' title and changing
 After fixing the incorrect closing tag for the 'Welcome back' title and changing section elements to divs (as they did not container a header), The following result was given. 
 
 ### Edit Review
-After fixing the incorrect closing tag for the 'Welcome back' title and changing section elements to divs (as they did not container a header). As well as removing a stray anchor tag. The following result was given. 
+After fixing the incorrect closing tag for the 'Welcome back' title and changing section elements to divs (as they did not container a header). As well as removing a stray anchor tag. The following result was given.
+
+### CSS valdator testing
+With zero changes, the following results were given.
+
