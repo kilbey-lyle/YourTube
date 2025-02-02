@@ -15,9 +15,32 @@
     </head>
 <body>
     <section>
-        <div class="img-wrapper">
-            <!-- <img id="welcome-img" class="responsive-img" src="static/imgs/yourtube_welcome_img.png">
-            </img> -->
+        <div class="background-img center-align valign-wrapper">
+            <div class="container" id="welcome-card">
+                <div class="row welcome-card-title">
+                    <a href="#!" class="brand-logo black-text"><span class="youtube white-text">Your</span>Tube</a>
+                </div>
+                <div class="row welcome-card-text">
+                    <h4>Welcome to YourTube!</h4>
+                    <p class="hide-on-small-only">Looking for what to watch next? Join today to view and create reviews on eveyrone favorite 
+                        youtubers. Whether you are looking to learn or share, theres a home for you at YourTube.</p>
+                </div>
+                <div class="welcome-options-wrapper">
+                <div class="row">
+                    <div class="col s12 m6 center-align">
+                        <a class="btn-large bg-white tx-black" href="{{ url_for('signin')}}">Sign In</a>
+                    </div>
+                    <div class="col s12 m6 center-align">
+                        <a class="btn-large bg-white tx-black" href="{{ url_for('feed')}}">Public Reviews</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <a class="btn-large bg-green tx-white" href="{{ url_for('signup')}}">Create an account</a>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
     </section>
 

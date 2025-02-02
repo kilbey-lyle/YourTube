@@ -64,17 +64,37 @@ body {
 }
 
 /*--------- Welcome page*/
-#welcome-img {
-    width: 100%;
-    height: auto;
+.background-img {
+    background-image: url("../imgs/yourtube_welcome_img.png");
+    height: 100vh;
+    background-size: cover;
 }
 
-.img-wrapper {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+#welcome-card {
+    height: 550px;
+    width: 700px;
+    background-color: #E1002D;
+    border-radius: 20px;
 }
 
+.welcome-card-title {
+    font-size: 50px;
+    background-color: #FFFFFF;
+}
+
+.welcome-card-text {
+    color: #FFFFFF;
+    font-size: large;
+    margin-top: 50px;
+}
+
+.welcome-options-wrapper {
+    margin-top: 40px;
+}
+
+.welcome-options-wrapper a {
+    margin: 15px;
+}
 
 
 /*--------- Header*/

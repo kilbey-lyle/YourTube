@@ -20,20 +20,20 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def welcome():
+    #if user is still signed in take them to feed
     try:
         if session['user']:
             return redirect(url_for('feed'))
     except:
-        pass
-    
+        print("No user logged in")
+    #if no user logged in show welcome page
     return render_template('welcome.html')
 
 
 @app.route("/feed")
 def feed():
+    #get all reviews marked as public
     reviews = mongo.db.reviews.find({"is_public":"on"})
-    # for i in reviews:
-    #     print(i)
     return render_template("feed.html", reviews=reviews)
 
 @app.route("/your_reviews")
