@@ -19,6 +19,16 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+def welcome():
+    try:
+        if session['user']:
+            return redirect(url_for('feed'))
+    except:
+        pass
+    
+    return render_template('welcome.html')
+
+
 @app.route("/feed")
 def feed():
     reviews = mongo.db.reviews.find({"is_public":"on"})
@@ -39,14 +49,15 @@ def signin():
 
         if user:
             if check_password_hash(user["password"], request.form.get("password")):
-                print("successful login")
                 session['user'] = request.form.get("username").lower()
+                flash(f"Welcome back {session['user']}!")
                 return redirect(url_for('feed'))
             else:
                 print("failed login")
+                flash(f'Password or username is incorrect')
                 return redirect(url_for('signin'))
         else:
-            print("failed login")
+            flash(f'Password or username is incorrect')
             return redirect(url_for('signin'))
 
     return render_template("signin.html")
@@ -58,6 +69,7 @@ def signup():
         user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
         if user:
+            flash(f'Unable to complete sign up, please try again')
             return redirect(url_for('signin'))
     
         new_user = {
@@ -65,14 +77,16 @@ def signup():
             "password":generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(new_user)
-
         session['user'] = request.form.get("username").lower()
+        flash(f'Welcome {session['user']}!')
+        return redirect(url_for('feed'))
+
     return render_template("signup.html")
 
 @app.route("/signout")
 def signout():
     session.clear()
-    return redirect(url_for('feed'))
+    return redirect(url_for('welcome'))
 
 @app.route("/create_review", methods=["GET", "POST"])
 def create_review():
@@ -90,7 +104,7 @@ def create_review():
         }
 
         mongo.db.reviews.insert_one(new_review)
-
+        flash('Review created')
         return redirect(url_for('your_reviews'))
 
     return render_template("create_review.html")
@@ -110,7 +124,7 @@ def edit_review(review_id):
         
 
         mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, {"$set":updated_review})
-
+        flash('Review updated')
         return redirect(url_for('your_reviews'))
 
     review = mongo.db.reviews.find_one({"_id":ObjectId(review_id)})
@@ -119,6 +133,7 @@ def edit_review(review_id):
 @app.route('/delete_review/<review_id>')
 def delete_review(review_id):
     mongo.db.reviews.delete_one({"_id": ObjectId(review_id)})
+    flash('Review deleted')
     return redirect(url_for('feed'))
 
 if __name__ == "__main__":
