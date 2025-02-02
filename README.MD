@@ -1,13 +1,13 @@
 # YourTube
 YourTube is the home of YouTube channel reviews. With over 100 hours of content uploaded to YouTube a minute, we all know how difficult it can be to know who to watch next. That's where YourTube comes in; being home to a community's opinions, thoughts, and comments on everyones favourite channels, there's no way you'll be stuck on what to watch next again. It was created and developed by Lyle Kilbey as part of Code Institute's Web App Development Qualification.
 
-**Insert Responsive UI Mock-Up here**
+!['Yourtube shown on different devices with different screens'](static/readme_imgs/yourtube_resposive_img.png)
 
 # UX
 ## Project Goals
 YourTube aims to provide the YouTube community with a place to share reviews on YouTube channels. Using these reviews, YourTube creates a one-stop shop for getting recommendations on what to watch your YouTube algorithm would never show you.
 ## External user's goal
- - Get recommendations on what channels other youtube consumers enjoy
+ - Get recommendations on what channels other YouTube consumers enjoy
  - Share your recommendations for youtube channels
 ## Site owner goal
 - Increase site traffic to sell advertisement space

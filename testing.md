@@ -17,3 +17,34 @@ if review id is know any user is able to delete rveiew - fixed by adding a sessi
 Edit view always loaded as is public turned on - update edit review tmeplate to reflect change to booleon data type
 
 unable to delete reviews - due to the fact I was calling .creaby by rather than calling the key value in [] < those things
+
+## Lighthouse
+### Welcome Page
+After updating the 'Create a new account button text colour to black' below, results were achieved.
+!['Screenshot of lighthouse results'](static/readme_imgs/lh_welcome.png)
+
+### Sign-in page
+Once the wording for the link to our sign up form was changed from "New to YourTube? Sign-up here." to "New to YourTube? Go to our Sign-up form." to give a better description text; the following result was achieved.
+!['Screenshot of lighthouse results'](static/readme_imgs/lh_signin.png)
+
+### Sign-up page
+Updating the message "Already got an account? Sign-in here." to "Already got an account? Visit the sign-in form." a result of the below was achieved.
+!['Screenshot of lighthouse results'](static/readme_imgs/lh_signup.png)
+
+### Public feed
+With zero changes, the following result was given.
+!['Screenshot of lighthouse results'](static/readme_imgs/lh_public.png)
+
+### Your Reviews
+After no changes. The following result was given.
+!['Screenshot of lighthouse results'](static/readme_imgs/lh_yourReviews.png)
+
+### Create review
+After no changes, the following result was given.
+!['Screenshot of lighthouse results'](static/readme_imgs/lh_create.png)
+
+### Edit Review
+After adding aria-label="delete button" to delete button, following result were given.
+!['Screenshot of lighthouse results'](static/readme_imgs/lh_edit.png)
+
+
