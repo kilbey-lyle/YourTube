@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<!--page title-->
 <div class="container">
     <div class="col center-align offset-m2 m8 s12">
         <div class="underline-wrapper">
@@ -7,6 +8,7 @@
         </div>
     </div>
 </div>
+<!--form-->
 <section>
     <div class="row">
         <div class="col offset-m2 m8 s12">
@@ -38,7 +40,9 @@
         </div>
     </div>
 </section>
+<!--already a user message-->
 <section class="center-align">
-    <p><strong>Already got an account? </strong>Sign in <a class="link-hover" href="{{ url_for('signin')}}">here</a>.</p>
+    <p><strong>Already got an account? </strong>Sign in <a class="link-hover" href="{{ url_for('signin')}}">here</a>.
+    </p>
 </section>
 {% endblock %}

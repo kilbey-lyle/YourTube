@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<!--Page title-->
 <div class="container">
     <div class="col center-align offset-m2 m8 s12">
         <div class="underline-wrapper">
@@ -7,6 +8,7 @@
         </div>
     </div>
 </div>
+<!--Form-->
 <section>
     <div class="row">
         <div class="col offset-m2 m8 s12">
@@ -17,7 +19,8 @@
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <div class="input-field col s11">
-                            <input id="username" name="username" type="text" class="validate" maxlength="15" minlength="3" pattern="^[a-zA-Z0-9]{3-15}$">
+                            <input id="username" name="username" type="text" class="validate" maxlength="15"
+                                minlength="3" pattern="^[a-zA-Z0-9]{3-15}$">
                             <label for="username">Username</label>
                         </div>
                     </div>
@@ -38,6 +41,7 @@
         </div>
     </div>
 </section>
+<!--New here message-->
 <section class="center-align">
     <p><strong>New to YourTube? </strong>Sign up <a class="link-hover" href="{{ url_for('signup')}}">here</a>.</p>
 </section>

@@ -99,7 +99,7 @@ body {
 
 /*--------- Header*/
 /* Logo*/
-
+/*Credit to Richard Rembert: https://dev.to/rembertdesigns/youtube-logo-pure-css-2268*/
 .youtube{
     color:white;
     position: relative;
@@ -119,6 +119,7 @@ body {
     left: -4.5%;
     border-radius: 5% / 50%;
 }
+/*end of credit*/
 
 .brand-logo {
     margin-left: 15px;
@@ -148,6 +149,7 @@ body {
     color: #FFFFFF;
     border: none;
 }
+
 /*--------- Screen Title*/
 .underline-wrapper {
     border-bottom: 2px solid #E1002D;
@@ -200,7 +202,7 @@ body {
 }
 
 /*--------- Forms*/
-/* signin*/
+/* signin&up*/
 
 .form-icon { 
     font-size: 35px;
@@ -212,6 +214,8 @@ form button, form a {
     margin: 50px 10px 0 10px;
     width: 90%;
 }
+
+/* edit & create*/
 
 form .switch label {
     color:#E1002D;
