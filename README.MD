@@ -64,6 +64,30 @@ The navigation elements present to a user will change depending on whether they 
 - Feed
 - Your Reviews
 - Sign Out
+# Data Schema
+This project is using MongoDB as its database technology. This section will outline the databases avaiable within this projects collection.
+
+## users
+
+|Field Name|Data Types|
+|-|-|
+|username|string|
+|password|string|
+
+## reviews
+
+|Field Name|Data Types|
+|-|-|
+|channel_name|string|
+|channel_link|string|
+|rating|int|
+|genre|string|
+|description|string|
+|is_public|bool|
+|created_by|string|
+|date_created|string (DD/MM/YY)|
+
+
 # User Story Implementation Evidence
 1. As a user, I would like to create reviews
 This was achieved by using a form which gets submitted as a POST request to the Flash app. The Flask app then processes the submitted data and add to the mongo database "reviews". The create a review button is held within the 'your reviews' page, which is only presented to users whom are signed in, meaning only registered users can create a review.
