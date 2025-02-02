@@ -81,7 +81,7 @@ Manual Testing and Validator Testing will be used to help ensure quality of Your
 3. Created app in Heroku UI
 4. Connected Github repo to Heroku
 5. Added config vars in Heroku UI
-6. 
+6. Enabled automatic deployment
 
 # Credits
 https://dev.to/rembertdesigns/youtube-logo-pure-css-2268 - LOGO

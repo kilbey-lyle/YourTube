@@ -13,3 +13,5 @@ unable to click oon edit button, edit page does not open, added url for to feed 
 manually typing in your reviews into search bar breaks app, same is true for edit, delete, create screen protection added ot all - check to make sure there is a user is session var
 
 if review id is know any user is able to delete rveiew - fixed by adding a session user, created by check
+
+Edit view always loaded as is public turned on - update edit review tmeplate to reflect change to booleon data type
