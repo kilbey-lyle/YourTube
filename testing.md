@@ -47,4 +47,25 @@ After no changes, the following result was given.
 After adding aria-label="delete button" to delete button, following result were given.
 !['Screenshot of lighthouse results'](static/readme_imgs/lh_edit.png)
 
+## HTML Validation
+### Welcome Page
+No changes needed
+!['Screenshot of HTML valdator testing results'](static/readme_imgs/html_welcome.png)
 
+### Sign-in page
+After fixing incorrect closing tag for 'Welcome back' title and changing section elements to divs (as they did not container a header) The following results were given. 
+
+### Sign-up page
+After fixing the incorrect closing tag for the 'Welcome back' title and changing section elements to divs (as they did not container a header), The following result was given. 
+
+### Public feed
+After fixing incorrect closing tag for 'Welcome back' title and changing section elements to divs (as they did not container a header). In addition to removing leftover 'href' and 'target' attributes, from an anchor element, from a paragraph element. The following result were given. 
+
+### Your Reviews
+After fixing the incorrect closing tag for the 'Welcome back' title and changing section elements to divs (as they did not container a header), The following result was given. 
+
+### Create review
+After fixing the incorrect closing tag for the 'Welcome back' title and changing section elements to divs (as they did not container a header), The following result was given. 
+
+### Edit Review
+After fixing the incorrect closing tag for the 'Welcome back' title and changing section elements to divs (as they did not container a header). As well as removing a stray anchor tag. The following result was given. 

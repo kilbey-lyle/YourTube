@@ -4,13 +4,13 @@
 <div class="container">
     <div class="col center-align offset-m2 m8 s12">
         <div class="underline-wrapper">
-            <h2 class="screen-title tx-black">Public Feed</h1>
+            <h2 class="screen-title tx-black">Public Feed</h2>
         </div>
     </div>
 </div>
 
 <!--Start of Panel-->
-<section>
+<div>
     <div class="row">
         <div class="col offset-m2 m8 s12">
             <div class="card bg-white z-depth-0">
@@ -24,7 +24,7 @@
                                 <a class="channel-name link-hover" href="{{ review.channel_link }}" target="_blank">{{
                                     review.channel_name }}</a>
                                 {% else %}
-                                <p class="channel-name" href="{{ review.channel_link }}" target="_blank">{{
+                                <p class="channel-name">{{
                                     review.channel_name }}</p>
                                 {% endif %}
                                 {% if session["user"] == review.created_by %}
@@ -55,5 +55,5 @@
             </div>
         </div>
     </div>
-</section>
+</div>
 {% endblock %}
