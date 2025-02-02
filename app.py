@@ -171,7 +171,7 @@ def delete_review(review_id):
         #check review exists
         review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
         #check user logged in has permission to delete review 
-        if session['user'] != review.created_by:
+        if session['user'] != review['created_by']:
             flash('Unable to delete review')
             return redirect(url_for('feed'))
     except:
