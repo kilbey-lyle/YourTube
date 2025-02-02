@@ -28,7 +28,9 @@
                                     review.channel_name }}</p>
                                 {% endif %}
                                 {% if session["user"] == review.created_by %}
-                                <a class="center-align edit-bttn" href="{{ url_for('edit_review', review_id=review._id)}}" aria-label="edit button"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a class="center-align edit-bttn"
+                                    href="{{ url_for('edit_review', review_id=review._id)}}" aria-label="edit button"><i
+                                        class="fa-solid fa-pen-to-square"></i></a>
                                 {% endif %}
                             </div>
                             <div class="collapsible-body bg-grey">
