@@ -38,8 +38,15 @@ def feed():
 
 @app.route("/your_reviews")
 def your_reviews():
-    #get all reviews for current user and pass to your reviews screen
-    reviews = mongo.db.reviews.find({"created_by": session['user']})
+    #checks if user is signed in
+    try:
+        #get all reviews for current user and pass to your reviews screen
+        reviews = mongo.db.reviews.find({"created_by": session['user']})
+    except:
+        #warn and redict user is no user is session cookie
+        flash('No user logged in, unable to open your reviews')
+        return redirect(url_for('signin'))
+    
     return render_template("your_reviews.html", reviews=reviews)
 
 @app.route("/signin", methods=["GET", "POST"])
@@ -100,6 +107,13 @@ def signout():
 
 @app.route("/create_review", methods=["GET", "POST"])
 def create_review():
+    #check for user is session cookie and redirect to sign in if error
+    try:
+        current_user = session['user']
+    except:
+        flash('No user logged in, unable to create review')
+        return redirect(url_for('signin'))
+
     if request.method == "POST":
         #creates var to hold is_public checkbox as a boolean
         is_public = True if request.form.get("is_public") else False
@@ -111,7 +125,7 @@ def create_review():
             "genre": request.form.get("genre"),
             "description": request.form.get("description"),
             "is_public": is_public,
-            "created_by": session['user'],
+            "created_by": current_user,
             "date_created": datetime.today().strftime('%d/%m/%y')
         }
         #adds object to DB
@@ -123,6 +137,12 @@ def create_review():
 
 @app.route('/edit_review/<review_id>', methods=["GET", "POST"])
 def edit_review(review_id):
+    try:
+        mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    except:
+        flash('Cannot find review')
+        return redirect(url_for('feed'))
+
     if request.method == "POST":
         #creates var to hold is_public checkbox as a boolean
         is_public = True if request.form.get("is_public") else False
@@ -147,6 +167,16 @@ def edit_review(review_id):
 
 @app.route('/delete_review/<review_id>')
 def delete_review(review_id):
+    try:
+        #check review exists
+        review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+        #check user logged in has permission to delete review 
+        if session['user'] != review.created_by:
+            flash('Unable to delete review')
+            return redirect(url_for('feed'))
+    except:
+        flash('Unable to delete review')
+        return redirect(url_for('feed'))
     #deletes document from DB based on ID
     mongo.db.reviews.delete_one({"_id": ObjectId(review_id)})
     flash('Review deleted')
