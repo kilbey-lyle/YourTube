@@ -30,7 +30,7 @@
                         </div>
                         <div class="input-field col s11">
                             <input id="channel_name" name="channel_name" type="text" class="validate"
-                                value="{{ review.channel_name }}">
+                                value="{{ review.channel_name }}" minlength="3" maxlength="40">
                             <label for="channel_name">Channel Name</label>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                         </div>
                         <div class="input-field col s11">
                             <input id="channel_link" name="channel_link" type="text" class="validate"
-                                value="{{ review.channel_link }}">
+                                value="{{ review.channel_link }}" pattern="^((?:https?:)?\/\/)?((?:www|m)\.).*">
                             <label for="channel_link">Channel Link</label>
                         </div>
                     </div>
@@ -57,7 +57,8 @@
                             <i class="fa-solid fa-tags"></i>
                         </div>
                         <div class="input-field col s5">
-                            <input id="genre" name="genre" type="text" class="validate" value="{{ review.genre }}">
+                            <input id="genre" name="genre" type="text" class="validate" value="{{ review.genre }}" 
+                                min="3" maxlength="10">
                             <label for="genre">Genre</label>
                         </div>
                     </div>
@@ -66,8 +67,9 @@
                             <i class="fa-solid fa-comment"></i>
                         </div>
                         <div class="input-field col s11">
-                            <textarea id="description" name="description" class="validate materialize-textarea">
-                                {{- review.description -}}
+                            <textarea id="description" name="description" class="validate materialize-textarea" 
+                                minlength="10" maxlength="1000">
+                                    {{- review.description -}}
                             </textarea>
                             <label for="description">Description</label>
                         </div>
