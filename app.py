@@ -61,7 +61,7 @@ def signin():
             #check if password is correct and if macth redirect to feed screen
             if check_password_hash(user["password"], request.form.get("password")):
                 session['user'] = request.form.get("username").lower()
-                flash(f"Welcome back {session['user']}!")
+                flash(f"Welcome back {session['user'].capitalize()}!")
                 return redirect(url_for('feed'))
             #if password incorrect show error
             else:

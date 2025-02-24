@@ -25,7 +25,7 @@ This section will outline the user scenarios, which will be addressed within the
 10. As a user, I would like a quick way of accessing a reviewed channel
 # Design and Wireframes
 ## Colours
-The color scheme for YourTube will be as follows:
+The colour scheme for YourTube will be as follows:
 ![YourTube Colour Theme](static/readme_imgs/yourtube_color_theme.jpeg)
 This scheme has been chosen to add a feeling of familiarity with our target audience of YouTube users. It reflects the signature YouTube red and the neutral supporting colours used within YouTube. The addition of the green Colour within YourTube allows for design choices that highlight users' action buttons. 
 ### Background Text Contrast
