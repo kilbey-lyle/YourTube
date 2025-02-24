@@ -94,7 +94,7 @@ def signup():
         mongo.db.users.insert_one(new_user)
         #adds username to session cookie
         session['user'] = request.form.get("username").lower()
-        flash(f'Welcome {session['user']}!')
+        flash(f'Welcome {session['user'].capitalize()}!')
         return redirect(url_for('feed'))
 
     return render_template("signup.html")
