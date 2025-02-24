@@ -144,10 +144,18 @@ body {
     border: none;
 }
 
+#signin:hover {
+    background-color: rgb(0, 189, 75, 0.5);
+}
+
 #signout {
     background-color: #E1002D;
     color: #FFFFFF;
     border: none;
+}
+
+#signout:hover {
+    background-color: rgb(255, 0, 45, 0.5);
 }
 
 /*--------- Screen Title*/
